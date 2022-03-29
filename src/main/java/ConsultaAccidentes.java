@@ -28,7 +28,7 @@ public class ConsultaAccidentes {
         // Equivale a selec * from products
         System.out.println("Todos los productos");
         Stream<Accidente> s = accidentes.stream(); //flujo de elementos Product
-        s.forEach(a -> System.out.println(a)); // imprime la lista de productos
+        s.forEach(System.out::println); // imprime la lista de productos
         // productStream.forEach(System.out::println); esta linea es equivalente a la anterior
         System.out.println();
     }

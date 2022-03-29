@@ -5,7 +5,7 @@ import java.time.LocalTime;
 
 public class Accidente {
 
-    private String id; // num_expediente
+    private String numExp; // num_expediente
     private LocalDate fecha; // fecha
     private LocalTime hora; // hora
     private String localizacion; // localizacion
@@ -22,8 +22,8 @@ public class Accidente {
     public Accidente() {
     }
 
-    public Accidente(String id, LocalDate fecha, LocalTime hora, String localizacion, String distrito, String estadoMetereologico, String tipoVehiculo, String sexo, String lesividad, String positivoAlcohol, String positivoDroga) {
-        this.id = id;
+    public Accidente(String numExp, LocalDate fecha, LocalTime hora, String localizacion, String distrito, String estadoMetereologico, String tipoVehiculo, String sexo, String lesividad, String positivoAlcohol, String positivoDroga) {
+        this.numExp = numExp;
         this.fecha = fecha;
         this.hora = hora;
         this.localizacion = localizacion;
@@ -36,12 +36,12 @@ public class Accidente {
         this.positivoDroga = positivoDroga;
     }
 
-    public String getId() {
-        return id;
+    public String getNumExp() {
+        return numExp;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setNumExp(String numExp) {
+        this.numExp = numExp;
     }
 
     public LocalDate getFecha() {
@@ -127,7 +127,7 @@ public class Accidente {
     @Override
     public String toString() {
         return "Accidente{" +
-                "id='" + id + '\'' +
+                "numExp='" + numExp + '\'' +
                 ", fecha=" + fecha +
                 ", localizacion='" + localizacion + '\'' +
                 ", distrito='" + distrito + '\'' +
