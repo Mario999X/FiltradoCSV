@@ -4,40 +4,43 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Accidente {
-    private int id;
-    private LocalDate fecha;
-    private String distrito;
-    private String positivoDroga;
-    private String positivoAlcohol;
-    private String choqueBus;
-    private String generoConductor;
-    private String lesividad; // Num de muertos
-    private LocalTime hora;
-    private String estadoMetereologico;
-    // Implicacion varios vehiculos = misma fecha, misma hora, mismo distrito
+
+    private String id; // num_expediente
+    private LocalDate fecha; // fecha
+    private LocalTime hora; // hora
+    private String localizacion; // localizacion
+    private String distrito; // distrito
+    private String estadoMetereologico; //estado_metereologico
+    private String tipoVehiculo; // tipo_vehiculo
+    private String sexo; // sexo
+    private String lesividad; // lesividad
+    private String positivoAlcohol; // positiva_alcohol
+    private String positivoDroga; // positiva_droga
+    // Implicacion varios vehiculos = misma fecha, misma hora, misma localizacion
 
 
     public Accidente() {
     }
 
-    public Accidente(int id, LocalDate fecha, String distrito, String positivoDroga, String positivoAlcohol, String choqueBus, String generoConductor, String lesividad, LocalTime hora, String estadoMetereologico) {
+    public Accidente(String id, LocalDate fecha, LocalTime hora, String localizacion, String distrito, String estadoMetereologico, String tipoVehiculo, String sexo, String lesividad, String positivoAlcohol, String positivoDroga) {
         this.id = id;
         this.fecha = fecha;
-        this.distrito = distrito;
-        this.positivoDroga = positivoDroga;
-        this.positivoAlcohol = positivoAlcohol;
-        this.choqueBus = choqueBus;
-        this.generoConductor = generoConductor;
-        this.lesividad = lesividad;
         this.hora = hora;
+        this.localizacion = localizacion;
+        this.distrito = distrito;
         this.estadoMetereologico = estadoMetereologico;
+        this.tipoVehiculo = tipoVehiculo;
+        this.sexo = sexo;
+        this.lesividad = lesividad;
+        this.positivoAlcohol = positivoAlcohol;
+        this.positivoDroga = positivoDroga;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -49,6 +52,22 @@ public class Accidente {
         this.fecha = fecha;
     }
 
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
+
+    public String getLocalizacion() {
+        return localizacion;
+    }
+
+    public void setLocalizacion(String localizacion) {
+        this.localizacion = localizacion;
+    }
+
     public String getDistrito() {
         return distrito;
     }
@@ -57,36 +76,28 @@ public class Accidente {
         this.distrito = distrito;
     }
 
-    public String getPositivoDroga() {
-        return positivoDroga;
+    public String getEstadoMetereologico() {
+        return estadoMetereologico;
     }
 
-    public void setPositivoDroga(String positivoDroga) {
-        this.positivoDroga = positivoDroga;
+    public void setEstadoMetereologico(String estadoMetereologico) {
+        this.estadoMetereologico = estadoMetereologico;
     }
 
-    public String getPositivoAlcohol() {
-        return positivoAlcohol;
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
-    public void setPositivoAlcohol(String positivoAlcohol) {
-        this.positivoAlcohol = positivoAlcohol;
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
     }
 
-    public String getChoqueBus() {
-        return choqueBus;
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setChoqueBus(String choqueBus) {
-        this.choqueBus = choqueBus;
-    }
-
-    public String getGeneroConductor() {
-        return generoConductor;
-    }
-
-    public void setGeneroConductor(String generoConductor) {
-        this.generoConductor = generoConductor;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public String getLesividad() {
@@ -97,19 +108,35 @@ public class Accidente {
         this.lesividad = lesividad;
     }
 
-    public LocalTime getHora() {
-        return hora;
+    public String getPositivoAlcohol() {
+        return positivoAlcohol;
     }
 
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
+    public void setPositivoAlcohol(String positivoAlcohol) {
+        this.positivoAlcohol = positivoAlcohol;
     }
 
-    public String getEstadoMetereologico() {
-        return estadoMetereologico;
+    public String getPositivoDroga() {
+        return positivoDroga;
     }
 
-    public void setEstadoMetereologico(String estadoMetereologico) {
-        this.estadoMetereologico = estadoMetereologico;
+    public void setPositivoDroga(String positivoDroga) {
+        this.positivoDroga = positivoDroga;
+    }
+
+    @Override
+    public String toString() {
+        return "Accidente{" +
+                "id='" + id + '\'' +
+                ", fecha=" + fecha +
+                ", localizacion='" + localizacion + '\'' +
+                ", distrito='" + distrito + '\'' +
+                ", estadoMetereologico='" + estadoMetereologico + '\'' +
+                ", tipoVehiculo='" + tipoVehiculo + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", lesividad='" + lesividad + '\'' +
+                ", positivoAlcohol='" + positivoAlcohol + '\'' +
+                ", positivoDroga='" + positivoDroga + '\'' +
+                '}';
     }
 }
