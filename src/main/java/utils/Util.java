@@ -29,25 +29,26 @@ public class Util {
             StringTokenizer tokenizer = new StringTokenizer(lines.get(i), ";");
             Accidente accidente = new Accidente();
             accidente.setNumExp(tokenizer.nextToken());
-            accidente.setFecha(LocalDate.parse(tokenizer.nextToken(), DateTimeFormatter.ofPattern("d/MM/yyyy")));
-            //accidente.setHora(LocalTime.parse(tokenizer.nextToken())); // , DateTimeFormatter.ofPattern("HH:mm:ss")
+            accidente.setFecha(tokenizer.nextToken());
+            accidente.setHora(tokenizer.nextToken());
             accidente.setLocalizacion(tokenizer.nextToken());
-            tokenizer.nextToken(); // saltamos numero
-            tokenizer.nextToken(); // saltamos cod_distrito
+            accidente.setNumero(tokenizer.nextToken());
+            accidente.setCodDistrito(tokenizer.nextToken());
             accidente.setDistrito(tokenizer.nextToken());
-            tokenizer.nextToken(); // saltamos tipo_accidente
+            accidente.setTipoAccidente(tokenizer.nextToken());
             accidente.setEstadoMetereologico(tokenizer.nextToken());
             accidente.setTipoVehiculo(tokenizer.nextToken());
-            tokenizer.nextToken(); // saltamos tipo_persona
-            tokenizer.nextToken(); // saltamos rango_edad
+            accidente.setTipoPersona(tokenizer.nextToken());
+            accidente.setRangoEdad(tokenizer.nextToken());
             accidente.setSexo(tokenizer.nextToken());
-            tokenizer.nextToken(); // saltamos cod_lesividad
+            accidente.setCodLesividad(tokenizer.nextToken());
             accidente.setLesividad(tokenizer.nextToken());
-            tokenizer.nextToken(); // saltamos coordenada_x_utm
-            //tokenizer.nextToken(); // saltamos coordenada_y_utm
-            accidente.setPositivoAlcohol(tokenizer.nextToken());
-            accidente.setPositivoDroga(tokenizer.nextToken());
+            accidente.setCoordenadaX(tokenizer.nextToken().replace(",", "."));
+            accidente.setCoordenadaY(tokenizer.nextToken().replace(",", "."));
+            //accidente.setPositivoAlcohol(tokenizer.nextToken());
+            //accidente.setPositivoDroga(tokenizer.nextToken());
             accidentes.add(accidente);
+            //System.out.println(accidentes);
         }
         return accidentes;
     }
