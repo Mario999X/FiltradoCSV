@@ -3,6 +3,8 @@ import utils.UtilCSV;
 
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ConsultaAccidentes {
@@ -66,8 +68,8 @@ public class ConsultaAccidentes {
 
    private void accidentesConBus(){
        System.out.println("--- Num de accidentes con intervención de buses ---");
-       Stream<Accidente> s = accidentes.stream().filter(p -> p.getTipoVehiculo().equalsIgnoreCase("autobús"));
-       System.out.println(s.count());
+       Long s = accidentes.parallelStream().filter(p -> p.getTipoVehiculo().equalsIgnoreCase("Autobús")).count();
+       System.out.println(s);
    }
 
    private void accidentesMultiple(){
