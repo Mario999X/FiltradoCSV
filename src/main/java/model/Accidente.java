@@ -1,52 +1,78 @@
 package model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 public class Accidente {
-    private int id;
-    private LocalDate fecha;
-    private String distrito;
-    private String positivoDroga;
-    private String positivoAlcohol;
-    private String choqueBus;
-    private String generoConductor;
-    private String lesividad; // Num de muertos
-    private LocalTime hora;
-    private String estadoMetereologico;
+
+    private String numExp; // num_expediente
+    private String fecha; // fecha
+    private String hora; // hora
+    private String localizacion; // localizacion
+    private String numero; // numero
+    private String codDistrito; // cod_distrito
+    private String distrito; // distrito
+    private String tipoAccidente; // tipo_accidente
+    private String estadoMetereologico; //estado_metereologico
+    private String tipoVehiculo; // tipo_vehiculo
+    private String tipoPersona; // tipo_persona
+    private String rangoEdad; // rango_edad
+    private String sexo; // sexo
+    private String codLesividad; // cod_lesividad
+    private String lesividad; // lesividad
+    private String coordenadaX; // coordenada_x_utm
+    private String coordenadaY; // coordenada_y_utm
+    private String positivoAlcohol; // positiva_alcohol
+    private String positivoDroga; // positiva_droga
     // Implicacion varios vehiculos = misma fecha, misma hora, mismo distrito
 
 
     public Accidente() {
     }
 
-    public Accidente(int id, LocalDate fecha, String distrito, String positivoDroga, String positivoAlcohol, String choqueBus, String generoConductor, String lesividad, LocalTime hora, String estadoMetereologico) {
-        this.id = id;
-        this.fecha = fecha;
-        this.distrito = distrito;
-        this.positivoDroga = positivoDroga;
-        this.positivoAlcohol = positivoAlcohol;
-        this.choqueBus = choqueBus;
-        this.generoConductor = generoConductor;
-        this.lesividad = lesividad;
-        this.hora = hora;
-        this.estadoMetereologico = estadoMetereologico;
+    public String getNumExp() {
+        return numExp;
     }
 
-    public int getId() {
-        return id;
+    public void setNumExp(String numExp) {
+        this.numExp = numExp;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public String getLocalizacion() {
+        return localizacion;
+    }
+
+    public void setLocalizacion(String localizacion) {
+        this.localizacion = localizacion;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getCodDistrito() {
+        return codDistrito;
+    }
+
+    public void setCodDistrito(String codDistrito) {
+        this.codDistrito = codDistrito;
     }
 
     public String getDistrito() {
@@ -57,36 +83,60 @@ public class Accidente {
         this.distrito = distrito;
     }
 
-    public String getPositivoDroga() {
-        return positivoDroga;
+    public String getTipoAccidente() {
+        return tipoAccidente;
     }
 
-    public void setPositivoDroga(String positivoDroga) {
-        this.positivoDroga = positivoDroga;
+    public void setTipoAccidente(String tipoAccidente) {
+        this.tipoAccidente = tipoAccidente;
     }
 
-    public String getPositivoAlcohol() {
-        return positivoAlcohol;
+    public String getEstadoMetereologico() {
+        return estadoMetereologico;
     }
 
-    public void setPositivoAlcohol(String positivoAlcohol) {
-        this.positivoAlcohol = positivoAlcohol;
+    public void setEstadoMetereologico(String estadoMetereologico) {
+        this.estadoMetereologico = estadoMetereologico;
     }
 
-    public String getChoqueBus() {
-        return choqueBus;
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
-    public void setChoqueBus(String choqueBus) {
-        this.choqueBus = choqueBus;
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
     }
 
-    public String getGeneroConductor() {
-        return generoConductor;
+    public String getTipoPersona() {
+        return tipoPersona;
     }
 
-    public void setGeneroConductor(String generoConductor) {
-        this.generoConductor = generoConductor;
+    public void setTipoPersona(String tipoPersona) {
+        this.tipoPersona = tipoPersona;
+    }
+
+    public String getRangoEdad() {
+        return rangoEdad;
+    }
+
+    public void setRangoEdad(String rangoEdad) {
+        this.rangoEdad = rangoEdad;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getCodLesividad() {
+        return codLesividad;
+    }
+
+    public void setCodLesividad(String codLesividad) {
+        this.codLesividad = codLesividad;
     }
 
     public String getLesividad() {
@@ -97,19 +147,42 @@ public class Accidente {
         this.lesividad = lesividad;
     }
 
-    public LocalTime getHora() {
-        return hora;
+    public String getCoordenadaX() {
+        return coordenadaX;
     }
 
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
+    public void setCoordenadaX(String coordenadaX) {
+        this.coordenadaX = coordenadaX;
     }
 
-    public String getEstadoMetereologico() {
-        return estadoMetereologico;
+    public String getCoordenadaY() {
+        return coordenadaY;
     }
 
-    public void setEstadoMetereologico(String estadoMetereologico) {
-        this.estadoMetereologico = estadoMetereologico;
+    public void setCoordenadaY(String coordenadaY) {
+        this.coordenadaY = coordenadaY;
+    }
+
+    public String getPositivoAlcohol() {
+        return positivoAlcohol;
+    }
+
+    public void setPositivoAlcohol(String positivoAlcohol) {
+        this.positivoAlcohol = positivoAlcohol;
+    }
+
+    public String getPositivoDroga() {
+        return positivoDroga;
+    }
+
+    public void setPositivoDroga(String positivoDroga) {
+        this.positivoDroga = positivoDroga;
+    }
+
+    @Override
+    public String toString() {
+        return "Accidente{" +
+                ", positivoAlcohol='" + positivoAlcohol + '\'' +
+                '}';
     }
 }
