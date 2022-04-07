@@ -1,5 +1,5 @@
 import model.Accidente;
-import utils.Util;
+import utils.UtilCSV;
 
 
 import java.util.List;
@@ -10,9 +10,10 @@ public class ConsultaAccidentes {
     List<Accidente> accidentes;
 
     public ConsultaAccidentes(){
+        UtilCSV csv = UtilCSV.getInstance();
         // Cargamos la lista de accidentes
         try {
-            accidentes = Util.getAccidentes();
+            accidentes = csv.getAccidentes();
             procesarStreamsBasicos();
         } catch (Exception e){
             System.err.println("Error al leer el fichero de accidentes: " + e.getMessage());
